@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "统计基本概念（常见离散型概率分布）"
+date:   2019-03-16 16:00:00 +0800
+categories: statistical-concepts
+---
+## 常见离散型概率分布
+由于老是记不清哪些分布对应哪些名字，所以还是从最基础的东西写起吧。（记忆力堪忧呀。。。）
+
+### bernoulli分布（伯努利分布）
+之所以叫伯努利分布是为了纪念jacob bernoulli，一个瑞士数学家。这是一个两点分布。  
+该分布反应了一个随机试验成功与否的可能性，如抛单个硬币。该分布只涉及一个参数，那就是试验成功的概率，$p$。  
+往往随机变量取值为0和1，1代表成功。概率分布为：$P(X=1) = p$ 和 $P(X=0) = 1-p$ 或者 P(X = k) = p^{k}(1-p)^{1-k}  
+期望是$E[X]=p$，方差是$Var[X]=p(1-p)$。
+
+### binomial distribution 二项分布
+之所以叫二项分布，因为这个分布的系数就是二项式系数。  
+该分布反应的是n个随机试验中成功次数的可能性，如抛n个硬币。它是n个iid的服从bernoulli分布的随机变量的总和，也就是n重伯努利试验成功次数。该分布涉及两个参数，随机试验的次数$n$和单次试验成功的概率$p$。伯努利分布可视作二项分布的特殊情况。  
+随机变量取值为$\{0,1,2,\dots,n\}$，表示成功的次数。概率分布为：$P(X=k) = C_n^{k} p^k (1-p)^{n-k}$。  
+期望是$E[X] = np$，方差是$Var[X]=np(1-p)$。  
+多项分布是二项分布的推广。参数是$(n,p_1,p_2,\dots,p_K)$。
+
+### geometric distribution 几何分布
+该分布的系数和几何级数有关，所以叫几何分布。  
+几何分布表示的是首次取得成功所需要的独立试验次数的可能性，如抛硬币出现第一次正面所需次数。该分布只涉及一个参数，也就是单次随机试验成功的概率$p$。  
+随机变量取值为$\{1,2,3,4,\dots\}$，表示的是首次成功所需的试验次数。概率分布为：$P(X=k) = (1-p)^{k-1}p$。  
+期望是$E[X]=\frac{1}{p}$，方差是$Var[X]=\frac{1-p}{p^2}$。
+
+### poisson distribution 泊松分布
+名字来源于法国数学家泊松。  
+该分布表示的是在一个固定的时间间隔或者空间中所发生事件数的可能性，反应了很多现实中的现象，如某个时间段内来的客人人数，呼叫中心固定时间段内接到电话次数等。该分布只涉及一个参数，就是指定间隔中的平均事件数$\lambda$，也就是事件强度。  
+随机变量取值为$\{0,1,2,3,4,\dots\}$，表示的是发生事件数。概率分布为：$P(X=k)=\frac{\lambda^{k}e^{-\lambda}}{k!}$。  
+期望是$E[X] = Var[X] = \lambda$。  
+泊松分布是在一定的假设下成立的，特别地，它是二项分布的极限，在固定区间内细分成$n$份，每个小区间都有随机事件发生可能，当$n$趋于极限时，极限分布就是泊松分布（$\lambda = np$）。公式如下：  
+$$P(X=k) = C_n^{k} p^k(1-p)^{n-k} = C_n^{k} \frac{\lambda}{n}^k (1-\frac{\lambda}{n})^{n-k} = \frac{\lambda^k}{k!}\left( 1-\frac{\lambda}{n} \right)^n \frac{n(n-1)\dots (n-k+1)}{n^k} \left( 1-\frac{\lambda}{n} \right)^{-k} \rightarrow \frac{\lambda^{k}e^{-\lambda}}{k!}$$
+
+
+### hypergeometric distribution 超几何分布
+
+### negative binomial distribution 负二项分布
+
+## 连续型概率分布
+
+### normal distribution 
+
+### beta distribution
+
+### cauchy distribution
+
+### chi squared distribution
+
+### double exponential distribution 
+
+### exponential distribution
+
+### F distribution
+
+### student distribution 
+
+### gamma distribution
+
+### uniform distribution
+
+### weibull distribution
+
+
