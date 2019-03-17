@@ -26,6 +26,12 @@ categories: statistical-concepts
 随机变量取值为$\{1,2,3,4,\dots\}$，表示的是首次成功所需的试验次数。概率分布为：$P(X=k) = (1-p)^{k-1}p$。  
 期望是$E[X]=\frac{1}{p}$，方差是$Var[X]=\frac{1-p}{p^2}$。
 
+### hypergeometric distribution 超几何分布
+该分布与超几何级数有关，所以叫超几何分布。  
+超几何分布刻画的是在只有K个正品的N个样品中抽取的n个样本中含有正品的数量的可能性。这个分布可以用来验证小群体代表大群体的有效性，若显著，则可以用该小群体来进行统计分析去了解大群体。该分布涉及三个参数：分别是总样本$N$，总样本含有的正样本$K$，和抽取数量$n$。  
+随机变量取值为$\{ \max{n+K-N},\dots,\min{n,K}\}$，表示的是抽取的$n$个样本中正样本的数量。概率分布为：$\frac{C_{K}^k C_{N-K}^{n-k}}{C_N^n}$。  
+期望是$E[X] = K\frac{n}{N}$，方差是$Var[X]=n\frac{K(N-K)(N-n)}{N N (N-1)}$。
+
 ### poisson distribution 泊松分布
 名字来源于法国数学家泊松。  
 该分布表示的是在一个固定的时间间隔或者空间中所发生事件数的可能性，反应了很多现实中的现象，如某个时间段内来的客人人数，呼叫中心固定时间段内接到电话次数等。该分布只涉及一个参数，就是指定间隔中的平均事件数$\lambda$，也就是事件强度。  
@@ -35,7 +41,6 @@ categories: statistical-concepts
 $$P(X=k) = C_n^{k} p^k(1-p)^{n-k} = C_n^{k} \frac{\lambda}{n}^k (1-\frac{\lambda}{n})^{n-k} = \frac{\lambda^k}{k!}\left( 1-\frac{\lambda}{n} \right)^n \frac{n(n-1)\dots (n-k+1)}{n^k} \left( 1-\frac{\lambda}{n} \right)^{-k} \rightarrow \frac{\lambda^{k}e^{-\lambda}}{k!}$$
 
 
-### hypergeometric distribution 超几何分布
 
 ### negative binomial distribution 负二项分布
 
