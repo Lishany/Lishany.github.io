@@ -4,6 +4,7 @@ title:  "统计基本概念（常见离散型概率分布）"
 date:   2019-03-16 16:00:00 +0800
 categories: statistical-concepts
 ---
+
 ## 常见离散型概率分布
 由于老是记不清哪些分布对应哪些名字，所以还是从最基础的东西写起吧。（记忆力堪忧呀。。。）
 
@@ -39,7 +40,6 @@ categories: statistical-concepts
 期望是$E[X] = Var[X] = \lambda$。  
 泊松分布是在一定的假设下成立的，特别地，它是二项分布的极限，在固定区间内细分成$n$份，每个小区间都有随机事件发生可能，当$n$趋于极限时，极限分布就是泊松分布（$\lambda = np$）。公式如下：  
 $$P(X=k) = C_n^{k} p^k(1-p)^{n-k} = C_n^{k} \frac{\lambda}{n}^k (1-\frac{\lambda}{n})^{n-k} = \frac{\lambda^k}{k!}\left( 1-\frac{\lambda}{n} \right)^n \frac{n(n-1)\dots (n-k+1)}{n^k} \left( 1-\frac{\lambda}{n} \right)^{-k} \rightarrow \frac{\lambda^{k}e^{-\lambda}}{k!}$$
-
 
 
 ### negative binomial distribution 负二项分布
