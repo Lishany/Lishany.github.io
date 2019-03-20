@@ -27,10 +27,18 @@ categories: statistical-concepts
 随机变量取值为$\{1,2,3,4,\dots\}$，表示的是首次成功所需的试验次数。概率分布为：$P(X=k) = (1-p)^{k-1}p$。  
 期望是$E[X]=\frac{1}{p}$，方差是$Var[X]=\frac{1-p}{p^2}$。
 
+### negative binomial dist. 负二项分布 和 pascal dist. 帕斯卡分布
+负二项分布其实和帕斯卡分布是等价的，负二项分布刻画的是直到产生$r$次失败，能有几次成功的可能性。帕斯卡分布是反着来的，刻画的是直到发生$r$次成功，产生失败次数的可能性。可见，几何分布是帕斯卡分布$r=1$的时候的特例，帕斯卡可看成几何分布的推广(但关心的数量不一致，几何分布关注总数量，帕斯卡分布关注的是失败的数量)。 
+随机变量取值为$\{0,1,2,3,4,\dots\}$，表示的是（失败\成功）次数。它们涉及两个参数，一个是$r$表示指定的次数(成功\失败)，另一个是$p$表示单次随机试验成功的概率。负二项分布的概率函数是：$P(X=k) = C_{r+k-1}^k p^{k} (1-p)^{r}$；帕斯卡的概率函数是：$P(X=k) = C_{r+k-1}^k p^r (1-p)^{k}$。  
+之所以取名为负二项分布，是因为其中的系数$C_{r+k-1}^k$可以简单书写成负二项系数$C_{-r}^k (-1)^k$。  
+和几何分布的关系：帕斯卡分布是$r$个iid的服从几何分布的随机变量的和-$r$。注意：帕斯卡的随机变量取值是失败次数，而几何分布的随机变量取值是总次数（即失败次数+成功的那一次）。帕斯卡分布有加和性质，即多个独立的服从帕斯卡分布的随机变量的和还是帕斯卡分布。  
+帕斯卡分布的期望是：$E[X] = r\frac{1-p}{p}$，方差是$r\frac{1-p}{p^2}$。  
+负二项分布的期望是：$E[X] = r\frac{p}{1-p}$，方差是$r\frac{p}{(1-p)^2}$。
+
 ### hypergeometric distribution 超几何分布
 该分布与超几何级数有关，所以叫超几何分布。  
 超几何分布刻画的是在只有K个正品的N个样品中抽取的n个样本中含有正品的数量的可能性。这个分布可以用来验证小群体代表大群体的有效性，若显著，则可以用该小群体来进行统计分析去了解大群体。该分布涉及三个参数：分别是总样本$N$，总样本含有的正样本$K$，和抽取数量$n$。  
-随机变量取值为$\{ \max{n+K-N},\dots,\min{n,K}\}$，表示的是抽取的$n$个样本中正样本的数量。概率分布为：$\frac{C_{K}^k C_{N-K}^{n-k}}{C_N^n}$。  
+随机变量取值为$\{ \max{n+K-N},\dots,\min{n,K}\}$，表示的是抽取的$n$个样本中正样本的数量。概率分布为：$P(X=k) = \frac{C_{K}^k C_{N-K}^{n-k}}{C_N^n}$。  
 期望是$E[X] = K\frac{n}{N}$，方差是$Var[X]=n\frac{K(N-K)(N-n)}{N N (N-1)}$。
 
 ### poisson distribution 泊松分布
@@ -40,32 +48,3 @@ categories: statistical-concepts
 期望是$E[X] = Var[X] = \lambda$。  
 泊松分布是在一定的假设下成立的，特别地，它是二项分布的极限，在固定区间内细分成$n$份，每个小区间都有随机事件发生可能，当$n$趋于极限时，极限分布就是泊松分布（$\lambda = np$）。公式如下：  
 $$P(X=k) = C_n^{k} p^k(1-p)^{n-k} = C_n^{k} \frac{\lambda}{n}^k (1-\frac{\lambda}{n})^{n-k} = \frac{\lambda^k}{k!}\left( 1-\frac{\lambda}{n} \right)^n \frac{n(n-1)\dots (n-k+1)}{n^k} \left( 1-\frac{\lambda}{n} \right)^{-k} \rightarrow \frac{\lambda^{k}e^{-\lambda}}{k!}$$
-
-
-### negative binomial distribution 负二项分布
-
-## 连续型概率分布
-
-### normal distribution 
-
-### beta distribution
-
-### cauchy distribution
-
-### chi squared distribution
-
-### double exponential distribution 
-
-### exponential distribution
-
-### F distribution
-
-### student distribution 
-
-### gamma distribution
-
-### uniform distribution
-
-### weibull distribution
-
-
