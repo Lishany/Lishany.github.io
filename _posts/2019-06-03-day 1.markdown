@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Welcome to Jekyll!"
+date:   2019-06-03 16:00:00 -0600
+categories: summer 2019
+---
+
+## some concepts
+
+### point-wise mutual information (pmi) and NPMI
+
+Pmi just define the mutual information between two outcomes, while mutual information defines the mutual information between two variables. We have $pmi(x, y) = \log \frac{p(x,y)}{p(x)p(y)}$. If event $x$ and $y$ are independent, we have $p(x, y) = p(x) p(y)$, resulting in $pmi(x, y) = 0$, vice versa. If event $x$ and $y$ are completely co-occurrence, we have $p(x, y) = p(x) = p(y)$, resulting in resulting in $pmi(x, y) = \log \frac{1}{p(x, y)}$. And we have the inequality $\log p(x, y) \leq \log \frac{p(x,y)}{p(x)p(y)} \leq \log \frac{p(x,y)}{p(x, y)p(x, y)}$ since $p(x), p(y) \leq 1$ and $p(x, y) \leq p(x), p(y)$. Finally, we get $-1 \leq - \frac{1}{\log p(x, y)} \log \frac{p(x, y)}{p(x)p(y)} \leq 1$. It should be noticed that -1 is for never occuring together, 0 is for indenpendence and 1 is for completely co-occurrence. Hence, we could define an index called normalized point-wise mutual information (NPMI) to measure the dependence or co-occurrence between two events whose range is $[-1, 1]$.
+
+
+
