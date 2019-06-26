@@ -5,6 +5,7 @@ date:   2019-06-01 23:27:00 -0600
 categories: algorithms
 ---
 ## EM Algorithm
+
 EM算法是一个通过考虑基于观测数据的缺失数据的条件分布的迭代优化算法。
 
 
