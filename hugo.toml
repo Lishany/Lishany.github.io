@@ -1,0 +1,48 @@
+baseURL = "https://Lishany.github.io/"
+title = "LishanYu Blog"
+theme = "PaperMod"
+languageCode = 'en-us'
+
+
+[taxonomies]
+category = "categories"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+ShowReadingTime = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+appendPort = false
+ShowToc = true
+ShowSearch = true
+
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1000
+threshold = 0.4
+minMatchCharLength = 2
+keys = ["title","permalink","summary","content"]
+
+[[menu.main]]
+identifier = "categories"
+name = "Categories"
+url = "/categories/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 20
+
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 30
+
